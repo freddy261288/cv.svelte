@@ -6,35 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </svelte:head>
 
-<div class="parent">
-<div class="sidebar"/>
-<div class="content">
 <slot />
-</div>
-</div>
 
 <style>
    :global(*) {
     margin: 0;
     padding: 0;
+    font-family: "Open Sans";
    }
    :global(html, body) {
     width: 100%;
     height: 100%;
+    background-color: #fffde7;
    }
-  .parent {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-  }
-  .sidebar {
-    background-color: blue;
-    width: 200px;
-    height: 100%;
-  }
-  .content {
-    display: flex;
-    flex-direction:  column;
-  }
+  
 </style>
