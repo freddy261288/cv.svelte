@@ -1,1 +1,1 @@
-<hi>Nothing to see here hehe</hi>
+<a href="/">Go to main pages</a>
