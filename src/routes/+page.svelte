@@ -1,11 +1,9 @@
 <script lang="ts">
-	import Icon from 'svelte-awesome';
+	import Section from '$components/Section.svelte';
 	import book from 'svelte-awesome/icons/book';
-	import user from 'svelte-awesome/icons/user';
 	import briefcase from 'svelte-awesome/icons/briefcase';
 	import cogs from 'svelte-awesome/icons/cogs';
-
-    import Section from '$components/Section.svelte';
+	import user from 'svelte-awesome/icons/user';
 </script>
 
 <div class="readable-area">
@@ -15,106 +13,20 @@
 			<p>Head Chef</p>
 		</div>
 		<img
-			alt=""
+			alt="spongebob avatar"
 			class="avatar"
 			src="https://play-lh.googleusercontent.com/9XA4q4TKYtF2l5oN10M8oumPauR9g5lFOAJXjczrd3Gmq9cwQ8QOQJ-2KZv84s1oTA"
 		/>
 	</a>
+
 	<div class="content">
-		<div class="content-column">
-			<Section iconData={user} title="Profile"> 
-				<p>
-					Hello, my name is Spongebob Squarepants and I'm passionate about creating the best possible
-					food. In my spare time, I like to catch jellyfishes with my trusty net.
-				</p>
-			</Section>
-			<Section iconData={book} title="Education">
-				<ul>
-					<li>
-						2011-2014
-						<br />
-						&emsp; Bikini Bottom High School
-					</li>
-					<li>
-						2014-2018
-						<br />
-						&emsp; New Kelp City Culinary College
-					</li>
-				</ul>
-			</Section>
-		</div>
-		<div class ="section-title">
-			<Section iconData={briefcase} title="Work History"> 
-				<ul>
-					<li>
-						Head Cook (2022 - ongoing)
-						<br />
-						&emsp; Krusty Krab, Inc.
-					</li>
-					<li>
-						Marketing Associate (2020 - 2022)
-						<br />
-						&emsp; Chum Bucket Ltd.
-					</li>
-					<li>
-						Jellyfish Catcher (2018 - 2020)
-						<br />
-						&emsp; Freelance
-					</li>
-				</ul>
-			</Section>
-		</div>
-		    <div class="section-title">
-			<Section iconData={cogs} title="Skills">
-				<ul>
-					<li>
-						<span>Jellyfish Hunting</span>
-						<div class="gauge">
-							<div class="bullet filled-bullet" />
-							<div class="bullet filled-bullet" />
-							<div class="bullet filled-bullet" />
-							<div class="bullet filled-bullet" />
-							<div class="bullet filled-bullet" />
-						</div>
-					</li>
-					<li>
-						<span>English</span>
-						<div class="gauge">
-							<div class="bullet filled-bullet" />
-							<div class="bullet filled-bullet" />
-							<div class="bullet filled-bullet" />
-							<div class="bullet filled-bullet" />
-							<div class="bullet" />
-						</div>
-					</li>
-					<li>
-						<span>Whale Singing</span>
-						<div class="gauge">
-							<div class="bullet filled-bullet" />
-							<div class="bullet filled-bullet" />
-							<div class="bullet filled-bullet" />
-							<div class="bullet" />
-							<div class="bullet" />
-						</div>
-					</li>
-				</ul>
-			</Section>
-		</div>
-			<div class="section-title">
-				<Icon data={user} />
-				Profile
-			</div>
-			<br />
+		<Section iconData={user} title="Profile">
 			<p>
 				Hello, my name is Spongebob Squarepants and I'm passionate about creating the best possible
 				food. In my spare time, I like to catch jellyfishes with my trusty net.
 			</p>
-			<br />
-			<div class="section-title">
-				<Icon data={book} />
-				Education
-			</div>
-			<br />
+		</Section>
+		<Section iconData={book} title="Education">
 			<ul>
 				<li>
 					2011-2014
@@ -127,13 +39,8 @@
 					&emsp; New Kelp City Culinary College
 				</li>
 			</ul>
-		</div>
-		<div class="content-column">
-			<div class="section-title">
-				<Icon data={briefcase} />
-				Work History
-			</div>
-			<br />
+		</Section>
+		<Section iconData={briefcase} title="Work History">
 			<ul>
 				<li>
 					Head Cook (2022 - ongoing)
@@ -151,12 +58,8 @@
 					&emsp; Freelance
 				</li>
 			</ul>
-			<br />
-			<div class="section-title">
-				<Icon data={cogs} />
-				Skills
-			</div>
-			<br />
+		</Section>
+		<Section iconData={cogs} title="Skills">
 			<ul>
 				<li>
 					<span>Jellyfish Hunting</span>
@@ -189,17 +92,11 @@
 					</div>
 				</li>
 			</ul>
-		</div>
+		</Section>
 	</div>
 </div>
 
 <style>
-	* {
-		margin: 0;
-		padding: 0;
-		font-family: 'Open Sans';
-	}
-
 	h1 {
 		font-family: 'peralta';
 	}
@@ -247,12 +144,13 @@
 		flex-direction: column;
 		background-color: #ffffff;
 		margin: 0 15%;
+		height: 100%;
 	}
 
 	.header {
 		padding: 16px;
 		display: flex;
-		flex-direction: row;
+		flex: row;
 		align-items: center;
 		border-bottom: 2px solid black;
 		text-decoration: none;
@@ -261,16 +159,9 @@
 
 	.content {
 		display: grid;
-		grid-template-columns: repeat (2, minmax(0, 1fr));
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 32px;
-		padding: 32px;
-	}
-
-	.content-column {
-		flex: 1;
-		margin-top: 16px;
-		padding: 0 16px 16px 16px;
-		background-color: #ffffff;
+		padding: 32px 32px;
 	}
 
 	img {
@@ -280,31 +171,27 @@
 		border-radius: 100%;
 	}
 
-	.section-title {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		gap: 15px;
-		background-color: #ffeb3b;
-		border-left: 4px solid #fbc02d;
-		color: black;
-		padding: 8px 16px;
-		text-transform: UPPERCASE;
-		font-weight: 500;
-	}
-	
-
-	@media (max-width: 600px) {
+	@media (min-width: 600px) {
 		.header {
-			flex-direction: column-reverse;
+			flex-direction: row;
 		}
 
 		.header-text {
-			text-align: center;
+			text-align: end;
 		}
 
 		.content {
-		  grid-template-columns: repeat(1, minmax(0, 1fr));
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+		}
+		.readable-area {
+			margin: 0 10%;
+		
 		}
 	}
+
+@media (min-width:1000px) {
+	.readable-area {
+     margin: 0 20%;
+	}
+}
 </style>
