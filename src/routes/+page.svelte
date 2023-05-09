@@ -1,3 +1,12 @@
+<script lang="ts">
+	import Icon from 'svelte-awesome';
+
+	import book from 'svelte-awesome/icons/book';
+	import user from 'svelte-awesome/icons/user';
+	import briefcase from 'svelte-awesome/icons/briefcase';
+	import cogs from 'svelte-awesome/icons/cogs';
+</script>
+
 <div class="readable-area">
 	<a class="header" href="./photo.html">
 		<div class="header-text">
@@ -5,6 +14,7 @@
 			<p>Head Chef</p>
 		</div>
 		<img
+			alt=""
 			class="avatar"
 			src="https://play-lh.googleusercontent.com/9XA4q4TKYtF2l5oN10M8oumPauR9g5lFOAJXjczrd3Gmq9cwQ8QOQJ-2KZv84s1oTA"
 		/>
@@ -13,7 +23,7 @@
 	<div class="content">
 		<div class="content-column">
 			<div class="section-title">
-				<i class="fa fa-solid fa-user" />
+				<Icon data={user} />
 				Profile
 			</div>
 			<br />
@@ -23,7 +33,7 @@
 			</p>
 			<br />
 			<div class="section-title">
-				<i class="fa fa-solid fa-book" />
+				<Icon data={book} />
 				Education
 			</div>
 			<br />
@@ -42,7 +52,7 @@
 		</div>
 		<div class="content-column">
 			<div class="section-title">
-				<i class="fa fa-solid fa-briefcase" />
+				<Icon data={briefcase} />
 				Work History
 			</div>
 			<br />
@@ -65,7 +75,7 @@
 			</ul>
 			<br />
 			<div class="section-title">
-				<i class="fa fa-solid fa-wand-sparkles" />
+				<Icon data={cogs} />
 				Skills
 			</div>
 			<br />
@@ -106,118 +116,115 @@
 </div>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Open Sans";
-}
+	* {
+		margin: 0;
+		padding: 0;
+		font-family: 'Open Sans';
+	}
 
-h1 {
-  font-family: "peralta";
-}
+	h1 {
+		font-family: 'peralta';
+	}
 
-ul {
-  list-style-type: none;
-}
+	ul {
+		list-style-type: none;
+	}
 
-li {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
+	li {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+	}
 
-li span {
-  margin-right: 16px;
-}
+	li span {
+		margin-right: 16px;
+	}
 
-.gauge {
-  display: flex;
-  flex-direction: row;
-}
+	.gauge {
+		display: flex;
+		flex-direction: row;
+	}
 
-.bullet {
-  border-radius: 100%;
-  width: 16px;
-  height: 16px;
-  margin: 4px;
-  background-color: #fff59d;
-}
+	.bullet {
+		border-radius: 100%;
+		width: 16px;
+		height: 16px;
+		margin: 4px;
+		background-color: #fff59d;
+	}
 
-.filled-bullet {
-  background-color: #fbc02d;
-}
+	.filled-bullet {
+		background-color: #fbc02d;
+	}
 
-.header-text {
-  text-align: end;
-  flex: 1;
-  margin-right: 16px;
-}
+	.header-text {
+		text-align: end;
+		flex: 1;
+		margin-right: 16px;
+	}
 
-.readable-area {
-  display: flex;
-  flex-direction: column;
-  background-color: #ffffff;
-  margin: 0 15%;
-}
+	.readable-area {
+		display: flex;
+		flex-direction: column;
+		background-color: #ffffff;
+		margin: 0 15%;
+	}
 
-.header {
-  padding: 16px;
-  display: flex;
-  flex: row;
-  align-items: center;
-  border-bottom: 2px solid black;
-  text-decoration: none;
-  color: #000000;
-}
+	.header {
+		padding: 16px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		border-bottom: 2px solid black;
+		text-decoration: none;
+		color: #000000;
+	}
 
-.content {
-  display: flex;
-  flex-direction: row;
-}
+	.content {
+		display: flex;
+		flex-direction: row;
+	}
 
-.content-column {
-  flex: 1;
-  margin-top: 16px;
-  padding: 0 16px 16px 16px;
-  background-color: #ffffff;
-}
+	.content-column {
+		flex: 1;
+		margin-top: 16px;
+		padding: 0 16px 16px 16px;
+		background-color: #ffffff;
+	}
 
-img {
-  width: 128px;
-  height: 128px;
-  border: 4px solid #000000;
-  border-radius: 100%;
-}
+	img {
+		width: 128px;
+		height: 128px;
+		border: 4px solid #000000;
+		border-radius: 100%;
+	}
 
-.fa.fa-solid {
-  margin-right: 8px;
-}
+	.section-title {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 15px;
+		background-color: #ffeb3b;
+		border-left: 4px solid #fbc02d;
+		color: black;
+		padding: 8px 16px;
+		text-transform: UPPERCASE;
+		font-weight: 500;
+	}
+	
 
-.section-title {
-  background-color: #ffeb3b;
-  border-left: 4px solid #fbc02d;
-  color: black;
-  padding: 8px 16px;
-  text-transform: UPPERCASE;
-  font-weight: 500;
-}
+	@media (max-width: 600px) {
+		.header {
+			flex-direction: column-reverse;
+		}
 
-i {
-  background-color: transparent;
-}
+		.header-text {
+			text-align: center;
+		}
 
-@media (max-width: 600px) {
-  .header {
-    flex-direction: column-reverse;
-  }
-
-  .header-text {
-    text-align: center;
-  }
-
-  .content {
-    flex-direction: column;
-  }
-}
+		.content {
+			flex-direction: column;
+		}
+	}
 </style>
